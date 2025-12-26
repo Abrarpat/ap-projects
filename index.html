@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Projects - Ready-Made IT Projects for Students</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1e;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #38bdf8 0%, #7c3aed 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .logo-text {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        
+        .logo-icon {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-icon svg {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 900;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .target-students {
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
+            font-size: 1.05em;
+        }
+        
+        .contact-banner {
+            background: linear-gradient(135deg, #ec4899, #ef4444);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-banner h2 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        
+        .contact-btn {
+            background: white;
+            color: #ec4899;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .whatsapp:hover {
+            background: #128C7E;
+        }
+        
+        .filter-section {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 12px 28px;
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #38bdf8, #7c3aed) border-box;
+            color: #7c3aed;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            color: white;
+            transform: scale(1.08);
+            box-shadow: 0 5px 20px rgba(56, 189, 248, 0.4);
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 18px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 1.05em;
+            margin-top: 20px;
+            outline: none;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .search-box:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #38bdf8, #7c3aed);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .php-badge {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: white;
+        }
+        
+        .python-badge {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+        }
+        
+        .aiml-badge {
+            background: linear-gradient(135deg, #ec4899, #ef4444);
+            color: white;
+        }
+        
+        .project-title {
+            font-size: 1.15em;
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.5;
+            min-height: 60px;
+        }
+        
+        .price-tag {
+            font-size: 2em;
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin: 18px 0;
+        }
+        
+        .includes {
+            background: linear-gradient(135deg, #f0f9ff, #faf5ff);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.95em;
+            color: #4b5563;
+            margin-bottom: 18px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        
+        .order-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.05em;
+            box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
+        }
+        
+        .order-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.5);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff, #faf5ff);
+            border-radius: 15px;
+            min-width: 150px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #38bdf8, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+        
+        .stat-label {
+            color: #6b7280;
+            font-size: 1em;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            .logo-icon svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 L90 35 L90 65 L50 90 L10 65 L10 35 Z" fill="white" opacity="0.9"/>
+                            <text x="50" y="65" font-size="45" font-weight="bold" fill="#7c3aed" text-anchor="middle">AP</text>
+                            <circle cx="50" cy="30" r="3" fill="#38bdf8"/>
+                            <circle cx="35" cy="50" r="3" fill="#38bdf8"/>
+                            <circle cx="65" cy="50" r="3" fill="#38bdf8"/>
+                            <line x1="50" y1="30" x2="35" y2="50" stroke="#38bdf8" stroke-width="2"/>
+                            <line x1="50" y1="30" x2="65" y2="50" stroke="#38bdf8" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h1>AP Projects</h1>
+                </div>
+            </div>
+            <p class="tagline">Ready-Made Academic Projects with Complete Documentation</p>
+            <div class="target-students">
+                For BCA | MCA | BTech | BCS | BSC | Diploma Students
+            </div>
+        </header>
+
+        <div class="contact-banner">
+            <h2>📞 Get Your Project Now!</h2>
+            <p style="font-size: 1.1em; margin-bottom: 15px;">Instant Support Available</p>
+            <a href="https://wa.me/918149534774" class="contact-btn whatsapp" target="_blank">💬 WhatsApp: 8149534774</a>
+            <a href="tel:+918149534774" class="contact-btn">📞 Call: 8149534774</a>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterProjects('php')">PHP Projects (₹2,500)</button>
+                <button class="filter-btn" onclick="filterProjects('python')">Python Projects (₹2,500)</button>
+                <button class="filter-btn" onclick="filterProjects('aiml')">AI/ML Projects (₹3,000)</button>
+            </div>
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects..." onkeyup="searchProjects()">
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">130+</div>
+                <div class="stat-label">PHP Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">19</div>
+                <div class="stat-label">Python Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">13</div>
+                <div class="stat-label">AI/ML Projects</div>
+            </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects will be loaded here by JavaScript -->
+        </div>
+
+        <footer>
+            <h3 style="font-size: 1.8em; margin-bottom: 20px; color: #1f2937;">Why Choose AP Projects?</h3>
+            <p style="font-size: 1.1em; line-height: 2;">✅ Complete Source Code | ✅ Detailed Project Report | ✅ PowerPoint Presentation</p>
+            <p style="font-size: 1.1em; line-height: 2;">✅ Instant Delivery | ✅ Full Documentation | ✅ Technical Support</p>
+            <p style="margin-top: 25px; color: #6b7280; font-size: 0.95em;">© 2024 AP Projects. Empowering IT Students with Quality Academic Projects.</p>
+        </footer>
+    </div>
+
+    <script>
+        const phpProjects = [
+            "User Registration & Login and User Management System With admin panel",
+            "Hostel Management System",
+            "Student Record System",
+            "Small CRM",
+            "Hospital Management System",
+            "Shopping Portal Using PHP and MySQL",
+            "Complaint Management system",
+            "Online Course Registration",
+            "Tourism Management System",
+            "Car Rental Project in PHP and Mysql",
+            "Blood Bank & Donor Management System",
+            "Online Library Management System",
+            "Student Result Management System",
+            "Employee Leaves Management System (ELMS)",
+            "News Portal Project in PHP and MySql",
+            "Contact form with mail function and Storing data in the database",
+            "Employee Record Management System in PHP and MySQL",
+            "Directory Management System using PHP and MySQL",
+            "Company Visitor Management System using PHP and MySQL",
+            "Daily Expense Tracker System Using PHP and MySQL",
+            "Apartment Visitors Management System using PHP and MySQL",
+            "Cyber Cafe Management System Using PHP & MySQL",
+            "Curfew e-Pass Management System Using PHP and MySQL",
+            "Beauty Parlour Management System using PHP and MySQL",
+            "User Management System in PHP using Stored Procedure",
+            "Insurance Management System in PHP and MySQL",
+            "College Admission Management System in PHP and MySQL",
+            "Laundry Management System Using PHP and MySQL",
+            "Vehicle Service Management System Using PHP and MySQL",
+            "Courier Management System Using PHP and MySQL",
+            "Food Ordering System using PHP and MySQL",
+            "Attendance Monitoring System using PHP and MySQL",
+            "Car Driving School Management System using PHP and MySQL",
+            "Event Management System using PHP and MySQL",
+            "Paying Guest Accommodation System",
+            "Car Showroom Management System Using PHP and MySQL",
+            "Pharmacy Management System using PHP and MySQL",
+            "Water Supply Management System Using PHP and MySQL",
+            "Toll Tax Management System using PHP & MySQL",
+            "Real Estate Management System Project using PHP & MySQL",
+            "Campus Recruitment Management System using PHP and MySQL",
+            "Vehicle Rental Management System using PHP and MySQL",
+            "Movers and Packers Management System using PHP and MySQL",
+            "Society Management System using PHP and MySQL",
+            "Online Diagnostic Lab Management System using PHP and MySQL",
+            "Online Tiffin Service System Using PHP and MySQL",
+            "Online Gas Booking System Using PHP and MySQL",
+            "Hotel Booking Management System Using PHP and MySQL",
+            "Online Furniture Shop Management System using PHP and MySQL",
+            "Yoga Classes Registration System using PHP and MySQL",
+            "Health Monitoring Management System Using PHP and MySQL",
+            "Crime Record Management System Using PHP and MySQL",
+            "Online Catering Management System Using PHP and MySQL",
+            "Complaint Management System Pro version using PHP and MySQL",
+            "AC Repairing System using PHP and MySQL",
+            "Online Dance Classes Registration System Using PHP and MySQL",
+            "Theme Park Management System Using PHP and MYSQL",
+            "Job Portal Project Using PHP and MYSQL",
+            "Online College Assignment System Using PHP and MySQL",
+            "Inventory Management System Using PHP and MYSQL",
+            "Online Magazine Management System using PHP and MySQL",
+            "Computer Service Management System Using PHP and MySQL",
+            "Lawyers Record Management System Using PHP and MySQL",
+            "Cake Bakery System Project Using PHP and MySQL",
+            "Mobile Store Management System using PHP and MySQL",
+            "Vehicle Breakdown Assistance Management System Using PHP",
+            "Daily Expense Tracker System Pro Version Using PHP",
+            "Directory Listing Management System Using PHP",
+            "Pre-Owned/Used Car Selling Management System Using PHP",
+            "Baby Daycare Management System Using PHP",
+            "Cold Storage Management System Using PHP",
+            "Curfew e-Pass Management System using PHP & MySQL Pro Version",
+            "Home Loan Management System using PHP & MySQL",
+            "Internet Service Provider Management System Using PHP and MySQL",
+            "Food Waste Management System Using PHP and MySQL",
+            "Sanitization Management System Using PHP and MySQL",
+            "Driver Hiring Management System Using PHP and MySQL",
+            "Jewelry Shop Management System Using PHP and MySQL",
+            "Online Shopping Portal Pro Version using PHP and MySQL",
+            "Employee Task Management System using PHP and MySQL",
+            "Blog Management System using PHP and MySQL (CMS)",
+            "Online Temple Management System using PHP and MySQL",
+            "Online Course Material Management System using PHP and MySQL",
+            "Fuel Delivery Management System Using PHP and MySQL",
+            "Traffic Squad Management System Using PHP and MySQL",
+            "Laptop and Desktop Rental Management System using PHP and MySQL",
+            "Garbage Management System using PHP and MySQL",
+            "Cricket Academy Management System using PHP and MySQL",
+            "Covid Vaccination Management System using PHP and MySQL",
+            "Employee Management System using PHP and MySQL",
+            "CREDIT CARD Application Management System Using PHP and MySQL",
+            "RTO Management System Using PHP and MySQL",
+            "Nursery Management System Using PHP and MySQL",
+            "Online Railway Catering System Using PHP and MySQL",
+            "Scholarship Management System using PHP and MySQL",
+            "Online College Faculty Record Management System using PHP and MySQL",
+            "Food Recipe System Using PHP and MySQL",
+            "Online Book Store Using PHP and MySQL",
+            "Toy Shop Using PHP and MySQL",
+            "Orphanage Management System using PHP and MySQL",
+            "Employee Transport System using PHP and MySQL",
+            "College Fee System using PHP and MySQL",
+            "College Alumni System using PHP and MySQL",
+            "Meeting and Conference Booking System using PHP and MySQL",
+            "Employees Attendance System using PHP and MySQL",
+            "Electronic Waste system using PHP and MySQL",
+            "Support Ticket System using PHP and MySQL",
+            "Online Cloth Rental System using PHP and MySQL",
+            "Online Birth and Death Certificate System using PHP and MySQL",
+            "Lost and Found Portal Using PHP and MySQL",
+            "Agriculture Equipment Rental System using PHP and MySQL",
+            "Fruits and Vegetable Shop Management System using PHP and MySQL",
+            "Online Tailor Booking System using PHP and MySQL",
+            "E-Banking System using PHP and MySQL",
+            "Diabetes Detection System using PHP and MYSQL",
+            "Online Scrap Portal Using PHP and MySQL",
+            "Weather Detection System using PHP and MySQL",
+            "Music Streaming Platform using PHP and MySQL",
+            "Token System using PHP and MySQL",
+            "Online Examination System using PHP and MySQL",
+            "Billing System using PHP and MySQL",
+            "Airline Ticket Booking System using PHP and MySQL",
+            "Online Auction System using PHP and MySQL",
+            "Movie Ticket Booking System using PHP and MySQL",
+            "Matrimonial Portal using PHP and MySQL"
+        ];
+
+        const pythonProjects = [
+            "Student Registration and Enrollment Management System",
+            "Blog Management System",
+            "Staff Leave Management System",
+            "Cyber Cafe Management System",
+            "Company Visitor Management System",
+            "Bus Pass Management System",
+            "Doctor Appointment Booking System",
+            "Apartment Visitor Management System",
+            "Student Record Management System",
+            "Complaint Management System",
+            "Employee Record Management System",
+            "Directory Management System",
+            "Online Notes Sharing Platform",
+            "Art Exhibition Management System",
+            "News Portal Application",
+            "Online Library Management System",
+            "Hospital Management System",
+            "Blood Bank and Donor Management System",
+            "Vehicle Breakdown Assistance Management System"
+        ];
+
+        const aimlProjects = [
+            "Heart Disease Prediction System",
+            "Calorie Burn Tracking System",
+            "Air Quality Prediction System",
+            "Website Phishing Detection System",
+            "Fake News Detection System",
+            "Stock Price Prediction System",
+            "Student Performance Prediction System",
+            "Loan Prediction System",
+            "Weather Forecasting System",
+            "House Price Prediction System",
+            "Credit Card Fraud Detection System",
+            "AI-Powered Resume Screening System",
+            "AI-Powered Fake Currency Detection System"
+        ];
+
+        let currentFilter = 'all';
+
+        function createProjectCard(title, category, price) {
+            const badgeClass = category === 'PHP' ? 'php-badge' : category === 'Python' ? 'python-badge' : 'aiml-badge';
+            const whatsappMsg = encodeURIComponent(`Hi! I'm interested in "${title}" project for ₹${price}`);
+            
+            return `
+                <div class="project-card" data-category="${category.toLowerCase()}" data-title="${title.toLowerCase()}">
+                    <span class="category-badge ${badgeClass}">${category}</span>
+                    <div class="project-title">${title}</div>
+                    <div class="price-tag">₹${price}</div>
+                    <div class="includes">
+                        📁 Complete Source Code<br>
+                        📄 Project Report<br>
+                        📊 PowerPoint Presentation
+                    </div>
+                    <a href="https://wa.me/918149534774?text=${whatsappMsg}" target="_blank" style="text-decoration: none;">
+                        <button class="order-btn">Order Now on WhatsApp</button>
+                    </a>
+                </div>
+            `;
+        }
+
+        function loadProjects() {
+            const grid = document.getElementById('projectsGrid');
+            let html = '';
+            
+            phpProjects.forEach(project => {
+                html += createProjectCard(project, 'PHP', '2,500');
+            });
+            
+            pythonProjects.forEach(project => {
+                html += createProjectCard(project, 'Python', '2,500');
+            });
+            
+            aimlProjects.forEach(project => {
+                html += createProjectCard(project, 'AI/ML', '3,000');
+            });
+            
+            grid.innerHTML = html;
+        }
+
+        function filterProjects(category) {
+            currentFilter = category;
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (category === 'aiml') {
+                    card.style.display = card.dataset.category === 'ai/ml' ? 'block' : 'none';
+                } else {
+                    card.style.display = card.dataset.category === category ? 'block' : 'none';
+                }
+            });
+        }
+
+        function searchProjects() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                const title = card.dataset.title;
+                const matchesSearch = title.includes(searchTerm);
+                const matchesFilter = currentFilter === 'all' || 
+                    (currentFilter === 'aiml' && card.dataset.category === 'ai/ml') ||
+                    card.dataset.category === currentFilter;
+                
+                card.style.display = matchesSearch && matchesFilter ? 'block' : 'none';
+            });
+        }
+
+        loadProjects();
+    </script>
+</body>
+</html>
